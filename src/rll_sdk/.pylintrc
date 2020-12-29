@@ -1,0 +1,36 @@
+[MASTER]
+
+# Python code to execute, usually for sys.path manipulation such as
+# pygtk.require().
+init-hook='import sys;from rospkg import RosPack;
+           sys.path.extend(
+             list(map(lambda path: path + "/src/",
+                      filter(lambda path: "rll_" in path.split("/")[-1],
+                             RosPack().get_ros_paths()))))'
+
+[MESSAGES CONTROL]
+
+disable=missing-docstring,locally-disabled,locally-enabled
+
+
+[REPORTS]
+
+# Set the output format. Available formats are text, parseable, colorized, msvs
+# (visual studio) and html. You can also give a reporter class, eg
+# mypackage.mymodule.MyReporterClass.
+output-format=colorized
+
+# Tells whether to display a full report or only the messages
+reports=yes
+
+
+[MISCELLANEOUS]
+
+# List of note tags to take in consideration, separated by a comma.
+notes=FIXME,XXX
+
+
+[BASIC]
+
+# Good variable names which should always be accepted, separated by a comma
+good-names=i,j,k,db,ns,ex,Run,_,logger

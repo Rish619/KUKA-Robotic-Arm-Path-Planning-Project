@@ -1,0 +1,5 @@
+geometry_msgs/Pose2D pose_start
+geometry_msgs/Pose2D pose_goal
+---
+bool success
+uint8 error_code

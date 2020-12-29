@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>rll_sdk</name>
+  <version>0.0.1</version>
+  <description>KUKA Robot Learning Lab at KIT SDK metapackage</description>
+  <maintainer email="wolfgang.wiedmeyer@kit.edu">Wolfgang Wiedmeyer</maintainer>
+  <license>GPLv3+</license>
+
+  <url type="repository">https://github.com/KITrobotics/rll_sdk</url>
+  <url type="bugtracker">https://github.com/KITrobotics/rll_sdk/issues</url>
+  <author email="wolfgang.wiedmeyer@kit.edu">Wolfgang Wiedmeyer</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <exec_depend>rll_kinematics</exec_depend>
+  <exec_depend>rll_moveit_kinematics_plugin</exec_depend>
+  <exec_depend>rll_control</exec_depend>
+  <exec_depend>rll_core</exec_depend>
+  <exec_depend>rll_description</exec_depend>
+  <exec_depend>rll_gazebo</exec_depend>
+  <exec_depend>rll_move</exec_depend>
+  <exec_depend>rll_move_client</exec_depend>
+  <exec_depend>rll_moveit_config</exec_depend>
+  <exec_depend>rll_msgs</exec_depend>
+  <exec_depend>rll_tools</exec_depend>
+
+  <exec_depend>gazebo_grasp_plugin</exec_depend>
+  <exec_depend>gazebo_version_helpers</exec_depend>
+
+  <export>
+    <metapackage />
+  </export>
+</package>

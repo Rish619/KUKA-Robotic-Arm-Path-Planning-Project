@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<package format="2">
+  <name>rll_kinematics</name>
+  <version>0.0.1</version>
+  <description>Inverse Kinematics solutions for the Robot Learning Lab</description>
+
+  <maintainer email="wolfgang.wiedmeyer@kit.edu">Wolfgang Wiedmeyer</maintainer>
+
+  <license>GPLv3+</license>
+
+  <author email="wolfgang.wiedmeyer@kit.edu">Wolfgang Wiedmeyer</author>
+  <author email="updim@student.kit.edu">Philipp Altoe</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>eigen</build_depend>
+  <depend>rll_core</depend>
+
+</package>

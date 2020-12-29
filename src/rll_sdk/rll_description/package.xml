@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>rll_description</name>
+  <version>0.1.0</version>
+  <description>Description files (urdf, meshes) for the KUKA Robot Learning Lab at KIT</description>
+
+  <maintainer email="wolfgang.wiedmeyer@kit.edu">Wolfgang Wiedmeyer</maintainer>
+
+  <license>GPLv3+</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <exec_depend>xacro</exec_depend>
+
+</package>

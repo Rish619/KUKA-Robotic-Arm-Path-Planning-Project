@@ -1,0 +1,60 @@
+#rll_cell:
+  # Publish all joint states -----------------------------------
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 30
+
+  # Trajectory Controllers --------------------------------------
+  #
+  # Forward Position Controllers --------------------------------
+  PositionJointInterface_trajectory_controller:
+    type: position_controllers/JointTrajectoryController
+    joints:
+      - $(arg robot_name)_joint_1
+      - $(arg robot_name)_joint_2
+      - $(arg robot_name)_joint_3
+      - $(arg robot_name)_joint_4
+      - $(arg robot_name)_joint_5
+      - $(arg robot_name)_joint_6
+      - $(arg robot_name)_joint_7
+
+    constraints:
+      goal_time: 2.0                   # Override default
+      stopped_velocity_tolerance: 0.03
+
+    stop_trajectory_duration: 0.5        # Override default
+
+  # EGL 90 Gripper controller ------------------------------------------
+  PositionJointInterface_egl90_gripper_controller:
+    type: effort_controllers/JointTrajectoryController
+    joints:
+      - $(arg robot_name)_egl90_position_left
+      - $(arg robot_name)_egl90_position_right
+    gains:
+      $(arg robot_name)_egl90_position_left: {p: 500,  d: 10, i: 2, i_clamp: 10}
+      $(arg robot_name)_egl90_position_right: {p: 500,  d: 10, i: 2, i_clamp: 10}
+    constraints:
+      goal_time: 2.0
+      stopped_velocity_tolerance: 0.03
+      $(arg robot_name)_egl90_position_left:
+        goal: 0.045
+      $(arg robot_name)_egl90_position_right:
+        goal: 0.045
+
+  # CRG 200 Gripper controller ------------------------------------------
+  PositionJointInterface_crg200_gripper_controller:
+    type: effort_controllers/JointTrajectoryController
+    joints:
+      - $(arg robot_name)_crg200_position_left
+      - $(arg robot_name)_crg200_position_right
+    gains:
+      # TODO(mark): are these values correct?
+      $(arg robot_name)_crg200_position_left: {p: 500,  d: 10, i: 2, i_clamp: 10}
+      $(arg robot_name)_crg200_position_right: {p: 500,  d: 10, i: 2, i_clamp: 10}
+    constraints:
+      goal_time: 2.0
+      stopped_velocity_tolerance: 0.03
+      $(arg robot_name)_crg200_position_left:
+        goal: 0.045
+      $(arg robot_name)_crg200_position_right:
+        goal: 0.045

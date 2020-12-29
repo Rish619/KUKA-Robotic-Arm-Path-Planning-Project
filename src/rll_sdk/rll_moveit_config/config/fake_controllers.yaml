@@ -1,0 +1,23 @@
+fake_interpolating_controller_rate: 60
+controller_list:
+  - name: fake_manipulator_controller
+    type: interpolate
+    joints:
+      - $(arg robot_name)_joint_1
+      - $(arg robot_name)_joint_2
+      - $(arg robot_name)_joint_3
+      - $(arg robot_name)_joint_4
+      - $(arg robot_name)_joint_5
+      - $(arg robot_name)_joint_6
+      - $(arg robot_name)_joint_7
+  - name: fake_gripper_controller
+    joints:
+      - $(arg robot_name)_$(arg eef_type)_position_left
+      - $(arg robot_name)_$(arg eef_type)_position_right
+
+
+#initial:
+#  - group: gripper
+#    pose: gripper_open
+#  - group: manipulator
+#    pose: home_bow

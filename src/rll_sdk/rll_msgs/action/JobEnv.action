@@ -1,0 +1,6 @@
+string authentication_secret
+string client_ip_addr
+---
+JobStatus job
+JobExtraField[] job_data
+---
